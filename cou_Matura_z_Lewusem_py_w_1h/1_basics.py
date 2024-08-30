@@ -1,24 +1,35 @@
-# for i in range(10):
-#     print('Hello, World!')
+grades = [2, 3, 4, 5, 6]
+print(grades[0])  # 2
+print(grades[1])  # 3
+print(grades[2])  # 4
 
-for i in range(1,10): # range(1,10) returns a sequence of numbers from 1 to 9, 10 is excluded
-    if i != 5:
-        print(i)
+for grade in grades:
+    print(grade)
 
-for i in range(1,10,2): # range(1,10,2) returns a sequence of numbers from 1 to 9 with a step of 2
-    if i == 5:
-        break
-    print(i)
+print('---')
+for i in range(len(grades)):
+    print(grades[i],end=' ')
 
-print('-----------------')
+print()
+print('---')
+for i,grade in enumerate(grades):
+    print(i,grade)
 
-temperture = 20
-while temperture < 25:
-    print('Temperture is too low')
-    temperture += 1
+print('---')
+for i,grade in enumerate(grades):
+    grades[i] = grade + 1
 
-print('-----------------')
-for i in range(1,10):
-    if i == 5:
-        continue
-    print(i)
+grades.append(6)
+grades.extend([7,8])# we must give a list or any iterable object
+grades.insert(0,1) # we must give an index and a value
+print(grades)
+# how to find an index of a value
+grades.remove(6) # we must give a value
+print(grades)
+print(grades.pop()) # 8
+print(grades)
+grades.sort() # or sorted(grades)
+print(grades) 
+grades.sort(reverse=True) # or sorted(grades,reverse=True)
+print(grades)
+print(grades.index(5)) # 3
