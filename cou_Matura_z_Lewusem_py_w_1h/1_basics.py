@@ -1,3 +1,5 @@
+
+from copy import deepcopy
 grades = [2, 3, 4, 5, 6]
 print(grades[0])  # 2
 print(grades[1])  # 3
@@ -33,3 +35,29 @@ print(grades)
 grades.sort(reverse=True) # or sorted(grades,reverse=True)
 print(grades)
 print(grades.index(5)) # 3
+
+print('-----------------')
+
+if 7 in grades:
+    print('7 is in grades')
+
+grades_all =  [
+    [2,3,4,5,6],
+    [3,4,5,6,7],
+    [4,5,6,7,8],
+]
+print(grades_all[0])
+print(grades_all[0][0])
+
+print('-----------------')
+for grades in grades_all:
+    print(grades,end=' ')
+    for grade in grades:
+        print(grade,end=' ')
+    print()
+
+print('-----------------')
+grades_2 = grades_all # we have two references to the same object, so we can change the object through both references
+grades_2[0][0] = 1 # we change the object grades_all, not grades_2
+print(grades_all)
+grades_2 = deepcopy(grades_all) # we have two different objects
