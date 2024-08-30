@@ -33,4 +33,4 @@ else:
     print("Zaloguj się.")
 
 if not user_logged_in:
-    print("Zaloguj się.")
+    print("Zaloguj się.") # this line will not be printed

@@ -33,4 +33,5 @@ c = True
 print(type(c)) # <class 'bool'>
 c = None
 print(type(c)) # <class 'NoneType'>
-# we can change the type of the variable in Python
+# we can change the type of the variable in Python - redeclaration of the variable
+
