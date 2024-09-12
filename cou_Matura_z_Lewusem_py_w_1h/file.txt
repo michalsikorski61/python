@@ -1,4 +1,6 @@
-Hello World
-znaczy
-witaj
-świecie
+1
+2
+3
+4
+5
+6
