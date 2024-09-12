@@ -19,3 +19,5 @@ print(marek_set.union(anne_set)) # {1, 2, 3, 4, 5} # grades that are in both lis
 print(marek_set.difference(anne_set)) # {4, 5} # grades that are in first list but not in second list
 print(anne_set.difference(marek_set)) # {3} # grades that are in second list but not in first list
 
+# unique marks grades
+grades = list(set(marks_grades))
