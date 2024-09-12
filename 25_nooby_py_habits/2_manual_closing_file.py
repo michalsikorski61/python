@@ -12,9 +12,6 @@ def manually_calling_close_on_a_file(filename):
 
 # you can also use the finally block to ensure the file is closed
 def finally_instead_of_context_manager(host,port):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    try:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host,port))
         s.sendall(b'Hello, world')
-    finally:
-        s.close()
