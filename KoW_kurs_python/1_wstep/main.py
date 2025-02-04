@@ -1,18 +1,25 @@
-print('jakieś pierdoły', 5 +3 )
-print('to będzie', end=' ')
-print('wszystko w jednej linii')
-
-print('dodwanie ',5+7)
-print('odejmowanie', 5-7)
-print('mnożenie', 5*7)
-print('dzielenie', 6/7)
-print('modulo (reszta z dzielenia)', 6 % 7)
-print('dzielenie całkowite', 6//7)
-print('potęgowanie', 6**7)
-
-print('hello' + 'world')
-print(' tu będzie słowo kilka razy: {}'.format('world ' * 3))
-
-#inna cześć kodu
-zmienna1 = input('podaj rzecz dyamicznie typowaną: ')
-print('Podałeś: {}'.format(zmienna1))
+print("Kolejność:")
+print(2 + 2 * 2) 
+print("Dzielenie:")
+print(5 / 2)
+print(5 // 2) # dzielenie całkowite - zwróci liczbę int
+print("Mnożenie:")
+print(2 * 3)
+(2 ** 3 ) #potęgowanie
+print("Skrócone")
+x = 5
+x += 1
+print(x)
+# print("Konwersja typów:")
+# a = input("a:")
+# b = input("b:")
+# a = int(a)
+# b = int(b)
+# print(a + b)
+# print(float(a) + float(b))
+y = 2
+z = 2
+print( y + z)
+print(str(y) + str(z))
+del y
+print(str(y) + str(z)) # deleted var
