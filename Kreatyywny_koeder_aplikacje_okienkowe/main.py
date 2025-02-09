@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QWidget,QPushButton
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Slot
 
+
 # loader = QUiLoader()
 # app = QApplication(sys.argv)
 
@@ -28,6 +29,7 @@ class MainWindow(QMainWindow):
      
     @Slot()
     def test(self):
+        print(self.window.lineEdit_2.text())
         print("lalala")
 
 if __name__ == "__main__":
