@@ -1,57 +1,32 @@
-from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QLabel, QLineEdit
-from PySide6.QtGui import QCloseEvent, QPixmap
+import sys
+from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtUiTools import QUiLoader
+from PySide6.QtCore import Slot
 
-class LoginWindow(QWidget):
-    def __init__(self):
-        super().__init__()
-        
-        self.login_line_edit = None
-        
-        self.setup()
-    
-    def setup(self):
-        width = 400
-        pix_label = QLabel(self)
-        pixmap = QPixmap("C:\\Users\\PECET\\Pictures\\angry_graphy_gumis.png").scaled(240,240)
-        pix_label.setPixmap(pixmap)
-        pix_label.move((width - 240)/2,50)
-        
-        self.login_line_edit = QLineEdit("Login", self)
-        self.login_line_edit.setFixedWidth(200)
-        self.login_line_edit.move(100,350)
-        
-        pass_line_edit = QLineEdit("Password", self)
-        pass_line_edit.setFixedWidth(200)
-        pass_line_edit.move(100,390)
-        
-        submit_btn = QPushButton("Submit",self)
-        submit_btn.move((width - submit_btn.size().width())/2,420)
-        submit_btn.clicked.connect(self.submit) #without brackets to prevent autotrigger
-        
-        quit_btn = QPushButton("Quit", self)
-        quit_btn.move(320,570) #  x,y
-        quit_btn.clicked.connect(QApplication.instance().quit)
-        self.setFixedSize(width, 600) #width, height
-        self.setWindowTitle("Login Window")
+# loader = QUiLoader()
+# app = QApplication(sys.argv)
 
+# window = loader.load("mainwindows.ui", None)
+# window.show()
+# app.exec()
+
+class MainWindow(QMainWindow):
+    def __init__(self, parent = None):
+        super().__init__(parent)
+        #load ui
+        loader = QUiLoader()
+        self.window = loader.load("mainwindows.ui",self)
+        #connect signals
+        self.window.btw_lower.clicked.connect(self.test)
+        
+        #show
         self.show()
-    
-    def submit(self):
-        print(self.login_line_edit.text())
-    
-    def closeEvent(self, event: QCloseEvent):
-        should_close = QMessageBox.question(self,"Close App","Do you want to close?",
-                                            QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-        if should_close == QMessageBox.StandardButton.Yes:
-            event.accept()
-        else:
-            event.ignore()
-
+     
+    @Slot()
+    def test(self):
+        print("lalala")
 
 if __name__ == "__main__":
-    app = QApplication([])
-    
-    # login window
-    login_window = LoginWindow()
-    
-    app.exec() # run program
+    app = QApplication(sys.argv)
+    win = MainWindow()
+    sys.exit(app.exec_())
