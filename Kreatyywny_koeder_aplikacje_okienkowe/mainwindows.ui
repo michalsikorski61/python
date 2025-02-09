@@ -24,7 +24,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btw_lower">
+      <widget class="QPushButton" name="btn_lower">
        <property name="text">
         <string>PushButton</string>
        </property>

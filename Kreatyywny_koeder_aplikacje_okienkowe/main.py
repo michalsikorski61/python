@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget,QPushButton
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Slot
 
@@ -13,11 +13,15 @@ from PySide6.QtCore import Slot
 class MainWindow(QMainWindow):
     def __init__(self, parent = None):
         super().__init__(parent)
+        #initialize widgets
+        self.window = QWidget()
+        self.window.btn_lower = QPushButton()
+        
         #load ui
         loader = QUiLoader()
         self.window = loader.load("mainwindows.ui",self)
         #connect signals
-        self.window.btw_lower.clicked.connect(self.test)
+        self.window.btn_lower.clicked.connect(self.test)
         
         #show
         self.show()
