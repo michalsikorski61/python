@@ -1,5 +1,15 @@
-# age should be between 18 and 65
-age = 22
-# if age >= 18 and age <= 65:
-if 18 <= age < 65:
-    print("Eligible")
+# for number in range(1, 4):
+#     print("Attempt", number, (number) * ".")
+
+
+#     print("Hello World", number, (number) * ".")
+successful = True
+for number in range(3):
+    print("Attempt")
+    # if number == 2:
+    #     successful = True
+    if successful:
+        print("Success")
+        break
+else:
+    print("Attempted 3 times and failed")
