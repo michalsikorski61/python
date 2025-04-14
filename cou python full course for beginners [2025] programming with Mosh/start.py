@@ -1,7 +1,5 @@
-age = 12
-# if age >= 18:
-#     message = "Eligible"
-# else:
-#     message = "Not Eligible"
-message = "Eligible" if age >= 18 else "Not Eligible"
-print(message)
+# age should be between 18 and 65
+age = 22
+# if age >= 18 and age <= 65:
+if 18 <= age < 65:
+    print("Eligible")
