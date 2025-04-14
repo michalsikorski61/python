@@ -1,15 +1,16 @@
-# for number in range(1, 4):
-#     print("Attempt", number, (number) * ".")
+# number = 100
+# while number > 0:
+#     print(number)
+#     number = number // 2
+
+# command = ""
+# while command.lower() != "quit":
+#     command = input(">").lower()
+#     print("ECHO", command)
 
 
-#     print("Hello World", number, (number) * ".")
-successful = True
-for number in range(3):
-    print("Attempt")
-    # if number == 2:
-    #     successful = True
-    if successful:
-        print("Success")
+while True:
+    command = input(">").lower()
+    print("ECHO", command)
+    if command.lower() == "quit":
         break
-else:
-    print("Attempted 3 times and failed")
